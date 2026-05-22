@@ -2,14 +2,14 @@
 
 ## How do I install these formulae?
 
-`brew install eirikerkulere/tap/<formula>`
+`brew install eirikerkulere/opengl/<formula>`
 
-Or `brew tap eirikerkulere/tap` and then `brew install <formula>`.
+Or `brew tap eirikerkulere/opengl` and then `brew install <formula>`.
 
 Or, in a `brew bundle` `Brewfile`:
 
 ```ruby
-tap "eirikerkulere/tap"
+tap "eirikerkulere/opengl"
 brew "<formula>"
 ```
 
