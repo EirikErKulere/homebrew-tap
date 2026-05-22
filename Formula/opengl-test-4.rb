@@ -2,13 +2,15 @@
 #                https://docs.brew.sh/rubydoc/Formula
 # PLEASE REMOVE ALL GENERATED COMMENTS BEFORE SUBMITTING YOUR PULL REQUEST!
 class OpenglTest4 < Formula
-  desc ""
+  desc "Prosjekt for å teste ting i OpenGL."
   homepage "https://github.com/EirikErKulere/OpenGL_Test_4"
   url "https://github.com/EirikErKulere/OpenGL_Test_4/archive/refs/tags/v0.1.0.tar.gz"
   sha256 "da0bbe5655ad038639f12cad38e481d877e197c2f848f61ef4bd7cc545b0527b"
   license ""
 
-  # depends_on "cmake" => :build
+  depends_on "cmake" => :build
+  depends_on "glfw"
+  depends_on "assimp"
 
   # Additional dependency
   # resource "" do
@@ -19,13 +21,14 @@ class OpenglTest4 < Formula
   def install
     # Remove unrecognized options if they cause configure to fail
     # https://docs.brew.sh/rubydoc/Formula.html#std_configure_args-instance_method
-    system "./configure", "--disable-silent-rules", *std_configure_args
+    # system "./configure", "--disable-silent-rules", *std_configure_args
     system "cmake", "-S", ".", "-B", "build", *std_cmake_args(install_prefix: prefix)
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
   end
 
   test do
+    assert_predicate bin/"OpenGL_Test_4", :exist?
     # `test do` will create, run in and delete a temporary directory.
     #
     # This test will fail and we won't accept that! For Homebrew/homebrew-core
@@ -35,6 +38,6 @@ class OpenglTest4 < Formula
     #
     # The installed folder is not in the path, so use the entire path to any
     # executables being tested: `system bin/"program", "do", "something"`.
-    system "false"
+    # system "false"
   end
 end
