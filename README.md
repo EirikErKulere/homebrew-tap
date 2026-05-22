@@ -1,4 +1,4 @@
-# EirikErKulere Tap
+# EirikErKulere OpenGL
 
 ## How do I install these formulae?
 
