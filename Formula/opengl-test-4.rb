@@ -20,7 +20,9 @@ class OpenglTest4 < Formula
     # Remove unrecognized options if they cause configure to fail
     # https://docs.brew.sh/rubydoc/Formula.html#std_configure_args-instance_method
     system "./configure", "--disable-silent-rules", *std_configure_args
-    # system "cmake", "-S", ".", "-B", "build", *std_cmake_args
+    system "cmake", "-S", ".", "-B", "build", *std_cmake_args(install_prefix: prefix)
+    system "cmake", "--build", "build"
+    system "cmake", "--install", "build"
   end
 
   test do
