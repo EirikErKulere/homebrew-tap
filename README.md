@@ -1,15 +1,15 @@
-# EirikErKulere OpenGL
+# E1fl4 OpenGL
 
 ## How do I install these formulae?
 
-`brew install eirikerkulere/opengl/<formula>`
+`brew install e1fl4/opengl/<formula>`
 
-Or `brew tap eirikerkulere/opengl` and then `brew install <formula>`.
+Or `brew tap e1fl4/opengl` and then `brew install <formula>`.
 
 Or, in a `brew bundle` `Brewfile`:
 
 ```ruby
-tap "eirikerkulere/opengl"
+tap "e1fl4/opengl"
 brew "<formula>"
 ```
 
